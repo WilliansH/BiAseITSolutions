@@ -1,6 +1,6 @@
 .footer {
-  background-color: #2563eb;
-  color: white;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
   padding: 2rem 1rem;
   margin-top: 2rem;
 }
@@ -32,13 +32,13 @@
 }
 
 .section ul li a {
-  color: white;
+  color: var(--text-primary);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .section ul li a:hover {
-  color: #93c5fd;
+  color: var(--accent-hover);
 }
 
 .social {
@@ -48,12 +48,12 @@
 }
 
 .social a {
-  color: white;
+  color: var(--text-primary);
   transition: color 0.3s ease;
 }
 
 .social a:hover {
-  color: #93c5fd;
+  color: var(--accent-hover);
 }
 
 .bottom {

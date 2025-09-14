@@ -4,9 +4,6 @@ import styles from './About.module.css';
 const About = () => {
   return (
     <section id="about" className={styles.about}>
-      <div className={styles.floatingShape1}></div>
-      <div className={styles.floatingShape2}></div>
-      <div className={styles.floatingShape3}></div>
       <div className={styles.container}>
         <h2>Sobre Nosotros</h2>
         <div className={styles.content}>

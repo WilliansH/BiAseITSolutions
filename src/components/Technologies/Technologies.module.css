@@ -1,6 +1,6 @@
 .technologies {
   padding: 4rem 0;
-  background-color: #f9fafb;
+  background-color: var(--bg-primary);
 }
 
 .container {
@@ -13,7 +13,7 @@
 .technologies h2 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
-  color: #1f2937;
+  color: var(--accent);
 }
 
 .techWrapper {
@@ -32,7 +32,7 @@
 
 .techWrapper p {
   font-size: 0.9rem;
-  color: #4b5563;
+  color: var(--text-secondary);
   margin: 0;
 }
 
