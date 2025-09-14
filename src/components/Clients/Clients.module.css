@@ -1,0 +1,26 @@
+.clients {
+  padding: 4rem 2rem;
+  background-color: white;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.clients h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #2563eb;
+}
+
+.logoWrapper {
+  padding: 1rem;
+}
+
+.logo {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+}

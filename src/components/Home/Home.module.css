@@ -1,0 +1,141 @@
+.Home {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0056b3 0%, #28a745 100%);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.shape1, .shape2 {
+  position: absolute;
+  opacity: 0.6;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.shape1 {
+  width: 250px;
+  height: 250px;
+  background: rgba(255, 255, 255, 0.3);
+  top: 20%;
+  left: 10%;
+  animation-name: moveShape1;
+  animation-duration: 10s;
+  clip-path: polygon(50% 10%, 10% 90%, 90% 90%);
+}
+
+.shape2 {
+  width: 350px;
+  height: 350px;
+  background: rgba(255, 255, 255, 0.2);
+  bottom: 15%;
+  right: 15%;
+  animation-name: moveShape2;
+  animation-duration: 12s;
+  clip-path: polygon(10% 0, 90% 0, 50% 90%);
+}
+
+@keyframes moveShape1 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(100px, 50px) rotate(90deg);
+  }
+  50% {
+    transform: translate(50px, 100px) rotate(180deg);
+  }
+  75% {
+    transform: translate(-50px, 50px) rotate(270deg);
+  }
+}
+
+@keyframes moveShape2 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(-100px, -50px) rotate(-90deg);
+  }
+  50% {
+    transform: translate(-50px, -100px) rotate(-180deg);
+  }
+  75% {
+    transform: translate(50px, -50px) rotate(-270deg);
+  }
+}
+
+.content {
+  max-width: 800px;
+}
+
+.ctaButton {
+  background-color: #fd7e14;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ctaButton:hover {
+  background-color: #e8680d;
+}
+
+.Home h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: fadeIn 2s ease-in;
+}
+
+.Home p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  animation: fadeIn 2s ease-in 0.5s both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .Home h1 {
+    font-size: 2rem;
+  }
+  .Home p {
+    font-size: 1rem;
+  }
+}
+
+.logoSlider {
+  margin-top: 2rem;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+}
+
+.logoWrapper {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  width: 100%;
+  max-width: 120px;
+  height: auto;
+}
