@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header.jsx';
 import Home from './components/Home/Home';
 import Services from './components/Services/Services.jsx';
@@ -12,17 +13,32 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Home />
-      <Services />
-      <Technologies />
-      <Clients />
-      <About />
-      <Careers />
-      <Contact />
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Header />
+              <Home />
+              <Services />
+              <Technologies />
+              <Clients />
+              <About />
+              <Careers />
+              <Contact />
+              <Footer />
+            </>
+          } />
+          <Route path="/services" element={
+            <>
+              <Header />
+              <Services />
+              <Footer />
+            </>
+          } />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
