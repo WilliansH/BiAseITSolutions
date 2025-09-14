@@ -21,7 +21,6 @@ function App() {
               <Header />
               <Home />
               <Services />
-              <Technologies />
               <Clients />
               <About />
               <Careers />
@@ -33,6 +32,7 @@ function App() {
             <>
               <Header />
               <Services />
+              <Technologies />
               <Footer />
             </>
           } />

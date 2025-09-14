@@ -7,19 +7,17 @@ import styles from './Technologies.module.css';
 const Technologies = () => {
   const technologies = [
     { name: 'MySQL', image: '/technologies/MySQL.png' },
-    { name: 'SQL Server', image: '/technologies/sqlserver.jpg' },
-    { name: 'PostgreSQL', image: '/technologies/postgresql.jpg' },
-    { name: 'C#', image: '/technologies/csharp.jpg' },
-    { name: 'Python', image: '/technologies/python.jpg' },
-    { name: 'PHP', image: '/technologies/php.jpg' },
-    { name: 'TypeScript', image: '/technologies/typescript.jpg' },
-    { name: 'JavaScript', image: '/technologies/javascript.jpg' },
-    { name: 'HTML', image: '/technologies/html.jpg' },
-    { name: 'CSS', image: '/technologies/css.jpg' },
-    { name: 'Angular', image: '/technologies/angular.jpg' },
-    { name: 'React', image: '/technologies/react.jpg' },
-    { name: 'Scrum', image: '/technologies/scrum.jpg' },
-    { name: 'Agile', image: '/technologies/agile.jpg' }
+    { name: 'SQL Server', image: '/technologies/sqlserver.png' },
+    { name: 'PostgreSQL', image: '/technologies/postgresql.png' },
+    { name: 'C#', image: '/technologies/csharp.png' },
+    { name: 'Python', image: '/technologies/python.png' },
+    { name: 'PHP', image: '/technologies/php.png' },
+    { name: 'TypeScript', image: '/technologies/typescript.png' },
+    { name: 'JavaScript', image: '/technologies/javascript.png' },
+    { name: 'HTML', image: '/technologies/html.png' },
+    { name: 'CSS', image: '/technologies/css.png' },
+    { name: 'Angular', image: '/technologies/angular.png' },
+    { name: 'React', image: '/technologies/react.png' }
   ];
 
   const settings = {
@@ -55,7 +53,7 @@ const Technologies = () => {
   return (
     <section id="technologies" className={styles.technologies}>
       <div className={styles.container}>
-        <h2>Tecnologías y Metodologías</h2>
+        <h2>Tecnologías</h2>
         <Slider {...settings}>
           {technologies.map((tech, index) => (
             <div key={index} className={styles.techWrapper}>
