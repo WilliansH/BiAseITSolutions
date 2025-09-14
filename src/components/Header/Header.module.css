@@ -5,6 +5,11 @@
   background-color: var(--bg-secondary);
   box-shadow: 0 2px 4px var(--border-color);
   z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.hidden {
+  transform: translateY(-100%);
 }
 
 .container {

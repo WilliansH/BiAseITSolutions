@@ -1,10 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import styles from './Header.module.css';
 
 const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
+
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -23,7 +41,7 @@ const Header = () => {
   };
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${!isVisible ? styles.hidden : ''}`}>
       <div className={styles.container}>
         <div className={styles.logo} onClick={() => handleNavClick('home')}>
           <img src="/Logo/Logo-01.jpg" alt="BiAse IT Solutions Logo" className={styles.logoImage} />
