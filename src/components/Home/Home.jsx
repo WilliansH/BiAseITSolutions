@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Home.module.css';
+import Typewriter from './Typewriter';
 
 const Home = () => {
   return (
@@ -10,8 +11,9 @@ const Home = () => {
       <div className={styles.shape4}></div>
       <div className={styles.shape5}></div>
       <div className={styles.content}>
-        <img src="/Logo/Logo-01.jpg" alt="BiAse IT Solutions Logo" className={styles.logo} />
-        <h1>Soluciones de Software a la Medida para tu Negocio</h1>
+        <h1>
+          <Typewriter text="Soluciones de Software a la Medida para tu Negocio" />
+        </h1>
         <p>En BiAse IT Solutions ofrecemos desarrollo personalizado, consultoría tecnológica y reclutamiento de talento IT para impulsar tu empresa.</p>
       </div>
     </section>
