@@ -17,6 +17,9 @@ const Technologies = () => {
     { name: 'HTML', image: '/technologies/html.png' },
     { name: 'CSS', image: '/technologies/css.png' },
     { name: 'Angular', image: '/technologies/angular.png' },
+    { name: 'Node.js', image: '/technologies/nodejs.png' },
+    { name: 'WordPress', image: '/technologies/wordpress.png' },
+    { name: 'Laravel', image: '/technologies/laravel.png' },
     { name: 'React', image: '/technologies/react.png' }
   ];
 

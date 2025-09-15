@@ -14,8 +14,7 @@ const Home = () => {
         <h1>
           <Typewriter text="Soluciones de Software a la Medida para tu Negocio" />
         </h1>
-        <p>En BiAse IT Solutions ofrecemos desarrollo personalizado, consultoría tecnológica y reclutamiento de talento IT para impulsar tu empresa.</p>
-      </div>
+        </div>
     </section>
   );
 };
