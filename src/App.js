@@ -25,7 +25,6 @@ function App() {
               <Clients />
               <About />
               <Careers />
-              <Contact />
               <Footer />
             </>
           } />
@@ -34,6 +33,13 @@ function App() {
               <Header />
               <ServiceDetails />
               <Technologies />
+              <Footer />
+            </>
+          } />
+          <Route path="/contact" element={
+            <>
+              <Header />
+              <Contact />
               <Footer />
             </>
           } />

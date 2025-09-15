@@ -52,7 +52,7 @@ const Header = () => {
           <Link to="/services">Servicios</Link>
           <a onClick={() => handleNavClick('clients')}>Clientes</a>
           <a onClick={() => handleNavClick('careers')}>Carreras</a>
-          <a onClick={() => handleNavClick('contact')}>Contacto</a>
+          <a onClick={() => navigate('/contact')}>Contacto</a>
         </nav>
       </div>
     </header>
