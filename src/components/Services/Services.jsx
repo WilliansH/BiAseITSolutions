@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaShoppingCart, FaLink, FaCog, FaCloud } from 'react-icons/fa';
+import { FaShoppingCart, FaLink, FaCog, FaCloud, FaHandshake, FaUserTie } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import styles from './Services.module.css';
 
@@ -22,6 +22,14 @@ const Services = () => {
     {
       title: 'Desarrollo de Software como Servicio (SAAS)',
       description: 'Arquitecturamos y desarrollamos aplicaciones web SAAS escalables y seguras para satisfacer demandas específicas.'
+    },
+    {
+      title: 'Consultoría Tecnológica',
+      description: 'Proporcionamos asesoramiento experto para optimizar tus procesos tecnológicos, adoptar nuevas tecnologías y resolver desafíos técnicos complejos.'
+    },
+    {
+      title: 'Contrato de Talento IT',
+      description: 'Identificamos, reclutamos y colocamos profesionales calificados en IT para satisfacer las necesidades específicas de tu equipo.'
     }
   ];
 
@@ -37,6 +45,8 @@ const Services = () => {
                 {index === 1 && <FaLink />}
                 {index === 2 && <FaCog />}
                 {index === 3 && <FaCloud />}
+                {index === 4 && <FaHandshake />}
+                {index === 5 && <FaUserTie />}
               </div>
               <h3>{service.title}</h3>
               <p>{service.description}</p>

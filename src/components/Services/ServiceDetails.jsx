@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { FaShoppingCart, FaLink, FaCog, FaCloud } from 'react-icons/fa';
+import { FaShoppingCart, FaLink, FaCog, FaCloud, FaHandshake, FaUserTie } from 'react-icons/fa';
 import styles from './Services.module.css';
 
 const ServiceDetails = () => {
@@ -55,6 +55,32 @@ const ServiceDetails = () => {
         'Monitoreo continuo y actualizaciones automáticas.'
       ],
       benefits: 'Reduce costos de infraestructura, permite acceso desde cualquier lugar y facilita el escalado según las necesidades.'
+    },
+    {
+      title: 'Consultoría Tecnológica',
+      icon: <FaHandshake />,
+      intro: 'La consultoría tecnológica proporciona asesoramiento experto para ayudar a las empresas a optimizar sus procesos tecnológicos, adoptar nuevas tecnologías y resolver desafíos técnicos complejos.',
+      howWeDoIt: [
+        'Evaluación inicial de la infraestructura tecnológica actual y necesidades futuras.',
+        'Análisis de riesgos y oportunidades en la adopción de nuevas tecnologías.',
+        'Desarrollo de estrategias personalizadas para transformación digital.',
+        'Recomendaciones sobre herramientas, plataformas y mejores prácticas.',
+        'Implementación guiada y soporte durante la transición.'
+      ],
+      benefits: 'Mejora la toma de decisiones, reduce riesgos tecnológicos y acelera la innovación en tu empresa.'
+    },
+    {
+      title: 'Contrato de Talento IT',
+      icon: <FaUserTie />,
+      intro: 'El contrato de talento IT se enfoca en la identificación, reclutamiento y colocación de profesionales calificados en tecnología de la información para satisfacer las necesidades específicas de tu equipo.',
+      howWeDoIt: [
+        'Análisis de las posiciones vacantes y requisitos específicos.',
+        'Búsqueda activa de candidatos en plataformas especializadas y redes profesionales.',
+        'Evaluación técnica y cultural de los candidatos preseleccionados.',
+        'Coordinación de entrevistas y procesos de selección.',
+        'Integración del nuevo talento al equipo con capacitación inicial.'
+      ],
+      benefits: 'Acceso rápido a talento especializado, reducción de tiempos de contratación y mejora de la calidad del equipo IT.'
     }
   ];
 
