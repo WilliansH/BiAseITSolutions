@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaUser, FaEnvelope, FaBuilding, FaPhone, FaPaperPlane, FaRocket } from 'react-icons/fa';
+import emailjs from 'emailjs-com';
 import styles from './Contact.module.css';
 
 const Contact = () => {
@@ -12,9 +13,29 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setForm({ name: '', email: '', empresa: '', telefono: '', mensaje: '' });
-    setTimeout(() => setSubmitted(false), 5000); // Hide message after 5 seconds
+
+    console.log('Form data:', form); // Debug: check form data
+    console.log('Env vars:', {
+      service: process.env.REACT_APP_EMAILJS_SERVICE_ID,
+      template: process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+      user: process.env.REACT_APP_EMAILJS_USER_ID
+    }); // Debug: check env vars
+
+    // Send email using emailjs
+    emailjs.send(
+      process.env.REACT_APP_EMAILJS_SERVICE_ID,
+      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+      form,
+      process.env.REACT_APP_EMAILJS_USER_ID
+    ).then((response) => {
+      console.log('SUCCESS!', response.status, response.text);
+      setSubmitted(true);
+      setForm({ name: '', email: '', empresa: '', telefono: '', mensaje: '' });
+      setTimeout(() => setSubmitted(false), 5000); // Hide message after 5 seconds
+    }, (err) => {
+      console.error('FAILED...', err);
+      alert('Error al enviar el mensaje. Por favor, inténtalo de nuevo.');
+    });
   };
 
   return (
