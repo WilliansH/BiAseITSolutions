@@ -1,33 +1,195 @@
-:root {
-  --bg-primary: #0d1117;
-  --bg-secondary: #161b22;
-  --bg-tertiary: #21262d;
-  --text-primary: #f0f6fc;
-  --text-secondary: #c9d1d9;
-  --accent: #58a6ff;
-  --accent-hover: #79c0ff;
-  --border-color: #30363d;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 217 33% 17%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 207 90% 54%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 25 95% 53%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 207 90% 54%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 25%;
+    --input: 217 33% 25%;
+    --ring: 207 90% 54%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(207 90% 54%) 0%, hsl(195 90% 60%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(25 95% 53%) 0%, hsl(35 95% 60%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(207 90% 54% / 0.1) 0%, hsl(25 95% 53% / 0.1) 100%);
+    --shadow-glow: 0 0 40px hsl(207 90% 54% / 0.3);
+    --shadow-glow-secondary: 0 0 40px hsl(25 95% 53% / 0.3);
+    --shadow-card: 0 10px 40px hsl(222 47% 11% / 0.5);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 207 90% 54%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 217 33% 17%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 33% 25%;
+    --sidebar-ring: 207 90% 54%;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    --card: 217 33% 17%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 207 90% 54%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 25 95% 53%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 207 90% 54%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 33% 25%;
+    --input: 217 33% 25%;
+    --ring: 207 90% 54%;
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 207 90% 54%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 217 33% 17%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 33% 25%;
+    --sidebar-ring: 207 90% 54%;
+  }
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
-body {
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
-  color: var(--text-primary);
-  background-color: var(--bg-primary);
+/* ===== ESTILOS PARA PHONE INPUT ===== */
+/* Estilos para el PhoneInput en modo oscuro */
+.phone-input-custom {
+  --PhoneInput-color--focus: hsl(207 90% 54%);
+  --PhoneInputCountrySelectArrow-color: hsl(215 20% 65%);
+  --PhoneInputCountrySelectArrow-color--focus: hsl(207 90% 54%);
 }
 
-a {
-  text-decoration: none;
-  color: var(--accent);
-  transition: color 0.3s ease;
+.phone-input-custom .PhoneInputInput {
+  background-color: hsl(222 47% 11%) !important;
+  color: hsl(210 40% 98%) !important;
+  border: none !important;
+  outline: none !important;
+  padding: 0.5rem 0.75rem !important;
+  width: 100% !important;
+  font-size: 0.875rem !important;
+  line-height: 1.25rem !important;
 }
 
-a:hover {
-  color: var(--accent-hover);
+.phone-input-custom .PhoneInputInput::placeholder {
+  color: hsl(215 20% 65%) !important;
+}
+
+.phone-input-custom .PhoneInputInput:focus {
+  box-shadow: none !important;
+  outline: none !important;
+  ring: 2px solid hsl(207 90% 54%) !important;
+}
+
+.phone-input-custom .PhoneInputCountry {
+  background-color: hsl(222 47% 11%) !important;
+  padding: 0.5rem 0.75rem !important;
+  border-right: 1px solid hsl(217 33% 25%) !important;
+}
+
+.phone-input-custom .PhoneInputCountrySelect {
+  background-color: hsl(222 47% 11%) !important;
+  color: hsl(210 40% 98%) !important;
+}
+
+.phone-input-custom .PhoneInputCountrySelect:focus {
+  background-color: hsl(217 33% 17%) !important;
+}
+
+.phone-input-custom .PhoneInputCountryIcon {
+  border-radius: 2px !important;
+}
+
+.phone-input-custom .PhoneInputCountryIconImg {
+  object-fit: cover !important;
+}
+
+/* Estilos para el dropdown de países */
+.PhoneInputCountryDropdown {
+  background-color: hsl(222 47% 11%) !important;
+  border: 1px solid hsl(217 33% 25%) !important;
+  color: hsl(210 40% 98%) !important;
+  border-radius: 0.5rem !important;
+  overflow: hidden !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3) !important;
+}
+
+.PhoneInputCountryOption {
+  background-color: hsl(222 47% 11%) !important;
+  color: hsl(210 40% 98%) !important;
+  padding: 0.5rem 0.75rem !important;
+  border-bottom: 1px solid hsl(217 33% 25%) !important;
+}
+
+.PhoneInputCountryOption:hover {
+  background-color: hsl(217 33% 17%) !important;
+}
+
+.PhoneInputCountryOption:focus {
+  background-color: hsl(217 33% 17%) !important;
+}
+
+.PhoneInputCountryOption[aria-selected="true"] {
+  background-color: hsl(207 90% 54%) !important;
+  color: hsl(210 40% 98%) !important;
+}
+
+/* Asegurar que el contenedor principal tenga los estilos correctos */
+.phone-input-custom {
+  border: 1px solid hsl(217 33% 25%) !important;
+  border-radius: 0.5rem !important;
+  background-color: hsl(222 47% 11%) !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.phone-input-custom:focus-within {
+  border-color: hsl(207 90% 54%) !important;
+  box-shadow: 0 0 0 2px hsl(207 90% 54% / 0.2) !important;
 }
