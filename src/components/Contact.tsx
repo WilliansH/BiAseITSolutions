@@ -8,8 +8,11 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import emailjs from '@emailjs/browser';
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
+  const { t } = useTranslation();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -25,7 +28,7 @@ const Contact = () => {
 
     // Validación básica
     if (!formData.name || !formData.email || !formData.inquiryType || !formData.message) {
-      toast.error("Por favor completa todos los campos requeridos");
+      toast.error(t('contact.validation.required'));
       setIsSubmitting(false);
       return;
     }
@@ -33,7 +36,7 @@ const Contact = () => {
     // Validar email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
-      toast.error("Por favor ingresa un email válido");
+      toast.error(t('contact.validation.email'));
       setIsSubmitting(false);
       return;
     }
@@ -58,11 +61,11 @@ const Contact = () => {
         templateParams
       );
 
-      toast.success("¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.");
+      toast.success(t('contact.success'));
       setFormData({ name: "", email: "", phone: "", inquiryType: "", message: "" });
     } catch (error) {
       console.error('Error sending email:', error);
-      toast.error("Hubo un error al enviar el mensaje. Por favor intenta de nuevo.");
+      toast.error(t('contact.error'));
     } finally {
       setIsSubmitting(false);
     }
@@ -94,10 +97,10 @@ const Contact = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Contáctanos
+            {t('contact.title')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            ¿Tienes un proyecto en mente? Nos encantaría escucharte y ayudarte a hacerlo realidad.
+            {t('contact.subtitle')}
           </p>
         </div>
 
@@ -105,14 +108,14 @@ const Contact = () => {
           {/* Contact Info */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-semibold mb-6">Información de Contacto</h3>
+              <h3 className="text-2xl font-semibold mb-6">{t('contact.info.title')}</h3>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Mail className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <p className="font-medium mb-1">Email</p>
+                    <p className="font-medium mb-1">{t('contact.info.email')}</p>
                     <a href="mailto:wh.140291@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
                       wh.140291@gmail.com
                     </a>
@@ -124,7 +127,7 @@ const Contact = () => {
                     <Phone className="w-6 h-6 text-secondary" />
                   </div>
                   <div>
-                    <p className="font-medium mb-1">Teléfono</p>
+                    <p className="font-medium mb-1">{t('contact.info.phone')}</p>
                     <a href="tel:+1234567890" className="text-muted-foreground hover:text-primary transition-colors">
                       +58 04248664440
                     </a>
@@ -136,7 +139,7 @@ const Contact = () => {
                     <MapPin className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <p className="font-medium mb-1">Ubicación</p>
+                    <p className="font-medium mb-1">{t('contact.info.location')}</p>
                     <p className="text-muted-foreground">
                       Venezuela - Anzoategui, Barcelona
                     </p>
@@ -146,11 +149,11 @@ const Contact = () => {
             </div>
 
             <div className="bg-background p-8 rounded-lg border border-border">
-              <h4 className="text-xl font-semibold mb-4">Horario de Atención</h4>
+              <h4 className="text-xl font-semibold mb-4">{t('contact.hours.title')}</h4>
               <div className="space-y-2 text-muted-foreground">
-                <p>Lunes - Viernes: 9:00 AM - 6:00 PM</p>
-                <p>Sábado: 10:00 AM - 2:00 PM</p>
-                <p>Domingo: Cerrado</p>
+                <p>{t('contact.hours.monday')}</p>
+                <p>{t('contact.hours.saturday')}</p>
+                <p>{t('contact.hours.sunday')}</p>
               </div>
             </div>
           </div>
@@ -160,7 +163,7 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2">
-                  Nombre *
+                  {t('contact.form.name')} *
                 </label>
                 <Input
                   id="name"
@@ -168,14 +171,14 @@ const Contact = () => {
                   type="text"
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder="Tu nombre completo"
+                  placeholder={t('contact.form.namePlaceholder')}
                   required
                 />
               </div>
 
               <div>
                 <label htmlFor="email" className="block text-sm font-medium mb-2">
-                  Email *
+                  {t('contact.form.email')} *
                 </label>
                 <Input
                   id="email"
@@ -183,14 +186,14 @@ const Contact = () => {
                   type="email"
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="tu@email.com"
+                  placeholder={t('contact.form.emailPlaceholder')}
                   required
                 />
               </div>
 
               <div>
                 <label htmlFor="phone" className="block text-sm font-medium mb-2">
-                  Teléfono
+                  {t('contact.form.phone')}
                 </label>
                 <PhoneInput
                   international
@@ -199,38 +202,38 @@ const Contact = () => {
                   value={formData.phone}
                   onChange={handlePhoneChange}
                   className="phone-input-custom"
-                  placeholder="Ingresa tu número de teléfono"
+                  placeholder={t('contact.form.phonePlaceholder')}
                 />
               </div>
 
               <div>
                 <label htmlFor="inquiryType" className="block text-sm font-medium mb-2">
-                  Tipo de Consulta *
+                  {t('contact.form.inquiryType')} *
                 </label>
                 <Select value={formData.inquiryType} onValueChange={handleSelectChange}>
                   <SelectTrigger>
-                    <SelectValue placeholder="Selecciona el tipo de consulta" />
+                    <SelectValue placeholder={t('contact.form.inquiryTypePlaceholder')} />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="Proyecto/Cliente potencial">Proyecto/Cliente potencial</SelectItem>
-                    <SelectItem value="Oportunidad laboral">Oportunidad laboral</SelectItem>
-                    <SelectItem value="Soporte técnico">Soporte técnico</SelectItem>
-                    <SelectItem value="Información general">Información general</SelectItem>
-                    <SelectItem value="Otro">Otro</SelectItem>
+                    <SelectItem value="Proyecto/Cliente potencial">{t('contact.form.inquiryOptions.project')}</SelectItem>
+                    <SelectItem value="Oportunidad laboral">{t('contact.form.inquiryOptions.job')}</SelectItem>
+                    <SelectItem value="Soporte técnico">{t('contact.form.inquiryOptions.support')}</SelectItem>
+                    <SelectItem value="Información general">{t('contact.form.inquiryOptions.info')}</SelectItem>
+                    <SelectItem value="Otro">{t('contact.form.inquiryOptions.other')}</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
 
               <div>
                 <label htmlFor="message" className="block text-sm font-medium mb-2">
-                  Mensaje *
+                  {t('contact.form.message')} *
                 </label>
                 <Textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Cuéntanos sobre tu proyecto..."
+                  placeholder={t('contact.form.messagePlaceholder')}
                   rows={5}
                   required
                 />
@@ -242,7 +245,7 @@ const Contact = () => {
                 className="w-full"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
+                {isSubmitting ? t('contact.form.sending') : t('contact.form.submit')}
               </Button>
             </form>
           </div>

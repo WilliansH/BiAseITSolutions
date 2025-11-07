@@ -3,10 +3,13 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.jpg";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,22 +56,23 @@ const Navigation = () => {
               onClick={() => scrollToSection("about")}
               className="text-foreground hover:text-primary transition-colors duration-200"
             >
-              Sobre Nosotros
+              {t('nav.about')}
             </button>
             <button
               onClick={() => scrollToSection("services")}
               className="text-foreground hover:text-primary transition-colors duration-200"
             >
-              Servicios
+              {t('nav.services')}
             </button>
             <button
               onClick={() => scrollToSection("technologies")}
               className="text-foreground hover:text-primary transition-colors duration-200"
             >
-              Tecnologías
+              {t('nav.technologies')}
             </button>
+            <LanguageSwitcher />
             <Button variant="hero" onClick={() => scrollToSection("contact")}>
-              Contacto
+              {t('nav.contact')}
             </Button>
           </div>
 
@@ -90,22 +94,23 @@ const Navigation = () => {
               onClick={() => scrollToSection("about")}
               className="text-left text-foreground hover:text-primary transition-colors duration-200 py-2"
             >
-              Sobre Nosotros
+              {t('nav.about')}
             </button>
             <button
               onClick={() => scrollToSection("services")}
               className="text-left text-foreground hover:text-primary transition-colors duration-200 py-2"
             >
-              Servicios
+              {t('nav.services')}
             </button>
             <button
               onClick={() => scrollToSection("technologies")}
               className="text-left text-foreground hover:text-primary transition-colors duration-200 py-2"
             >
-              Tecnologías
+              {t('nav.technologies')}
             </button>
+            <LanguageSwitcher />
             <Button variant="hero" onClick={() => scrollToSection("contact")} className="w-full">
-              Contacto
+              {t('nav.contact')}
             </Button>
           </div>
         </div>

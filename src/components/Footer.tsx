@@ -1,6 +1,7 @@
 import { Github, Linkedin, Twitter } from "lucide-react";
 import logo from "@/assets/logo.jpg";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const FooterLogo = () => {
   const navigate = useNavigate();
@@ -23,6 +24,7 @@ const FooterLogo = () => {
 };
 
 const Footer = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
   const navigate = useNavigate();
   const location = useLocation();
@@ -44,32 +46,32 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <FooterLogo />
             <p className="text-muted-foreground max-w-md">
-              Soluciones tecnológicas innovadoras para impulsar el crecimiento de tu empresa.
+              {t('footer.description')}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold mb-4">Enlaces Rápidos</h3>
+            <h3 className="font-semibold mb-4">{t('footer.quickLinks')}</h3>
             <ul className="space-y-2">
               <li>
                 <button onClick={() => scrollToSection("about")} className="text-left text-muted-foreground hover:text-primary transition-colors py-1">
-                  Sobre Nosotros
+                  {t('nav.about')}
                 </button>
               </li>
               <li>
                 <button onClick={() => scrollToSection("services")} className="text-left text-muted-foreground hover:text-primary transition-colors py-1">
-                  Servicios
+                  {t('nav.services')}
                 </button>
               </li>
               <li>
                 <button onClick={() => scrollToSection("technologies")} className="text-left text-muted-foreground hover:text-primary transition-colors py-1">
-                  Tecnologías
+                  {t('nav.technologies')}
                 </button>
               </li>
               <li>
                 <button onClick={() => scrollToSection("contact")} className="text-left text-muted-foreground hover:text-primary transition-colors py-1">
-                  Contacto
+                  {t('nav.contact')}
                 </button>
               </li>
             </ul>
@@ -77,7 +79,7 @@ const Footer = () => {
 
           {/* Social Media */}
           {/* <div>
-            <h3 className="font-semibold mb-4">Síguenos</h3>
+            <h3 className="font-semibold mb-4">{t('footer.followUs')}</h3>
             <div className="flex gap-4">
               <a
                 href="https://twitter.com"
@@ -110,7 +112,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-border pt-8">
           <p className="text-center text-muted-foreground">
-            © {currentYear} BiAse IT Solutions. Todos los derechos reservados.
+            {t('footer.copyright', { year: currentYear })}
           </p>
         </div>
       </div>

@@ -1,0 +1,208 @@
+{
+  "nav": {
+    "about": "About Us",
+    "services": "Services",
+    "technologies": "Technologies",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "BiAse IT Solutions",
+    "subtitle": "Designing the future",
+    "status": "Ready to start?",
+    "cta": "Let's Go"
+  },
+  "about": {
+    "title": "About Us",
+    "description": "At BiAse IT Solutions, we are dedicated to providing innovative and personalized technological solutions to drive your company's growth. Our team of experts works with passion and commitment to provide you with the best service.",
+    "mission": {
+      "title": "Our Mission",
+      "description": "Transform ideas into technological solutions that drive our clients' success."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "To be leaders in technological innovation and the preferred partner for digital transformation."
+    },
+    "team": {
+      "title": "Our Team",
+      "description": "Passionate and experienced professionals committed to excellence in every project."
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "description": "We offer tailored solutions to digitally transform your company.",
+    "ecommerce": {
+      "title": "E-Commerce Solutions",
+      "description": "Secure, optimized e-commerce platforms adapted to your business."
+    },
+    "integration": {
+      "title": "System Integration",
+      "description": "We connect your applications to eliminate silos and automate workflows."
+    },
+    "customization": {
+      "title": "Software Customization",
+      "description": "We adapt solutions to fit your processes and users."
+    },
+    "saas": {
+      "title": "SAAS Development",
+      "description": "Scalable architecture and cloud management for SaaS products."
+    },
+    "consulting": {
+      "title": "Technology Consulting",
+      "description": "Strategy, roadmap and support in digital transformation."
+    },
+    "talent": {
+      "title": "IT Talent Contract",
+      "description": "Recruitment and placement of specialized IT profiles."
+    }
+  },
+  "technologies": {
+    "title": "Technologies We Master",
+    "description": "We work with the most modern and robust technologies on the market to offer you the best solutions."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Do you have a project in mind? We'd love to hear from you and help make it happen.",
+    "info": {
+      "title": "Contact Information",
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location"
+    },
+    "hours": {
+      "title": "Business Hours",
+      "monday": "Monday - Friday: 9:00 AM - 6:00 PM",
+      "saturday": "Saturday: 10:00 AM - 2:00 PM",
+      "sunday": "Sunday: Closed"
+    },
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your full name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "phone": "Phone",
+      "phonePlaceholder": "Enter your phone number",
+      "inquiryType": "Inquiry Type",
+      "inquiryTypePlaceholder": "Select inquiry type",
+      "inquiryOptions": {
+        "project": "Project/Client potential",
+        "job": "Job opportunity",
+        "support": "Technical support",
+        "info": "General information",
+        "other": "Other"
+      },
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your project...",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully! We will contact you soon.",
+      "error": "There was an error sending the message. Please try again.",
+      "validation": {
+        "required": "Please complete all required fields",
+        "email": "Please enter a valid email"
+      }
+    }
+  },
+  "footer": {
+    "description": "Innovative technological solutions to drive your company's growth.",
+    "quickLinks": "Quick Links",
+    "followUs": "Follow Us",
+    "copyright": "© {{year}} BiAse IT Solutions. All rights reserved."
+  },
+  "servicesPage": {
+    "title": "Our Detailed Services",
+    "ecommerce": {
+      "whatIs": "What is it?",
+      "intro": "E-commerce, or E-Commerce, is the buying and selling of goods and services through the internet. It allows companies to reach a global market without the limitations of a physical store.",
+      "howWeDoIt": "How we do it",
+      "howWeDoItList": [
+        "Design of intuitive and attractive user interfaces for a smooth shopping experience.",
+        "Integration of secure payment gateways like Stripe, PayPal or MercadoPago.",
+        "Search engine optimization (SEO) to increase online visibility.",
+        "Responsive development for mobile and desktop devices.",
+        "Implementation of shopping carts, inventory management and shipping systems."
+      ],
+      "benefits": "Benefits",
+      "benefitsText": "Increase your online sales, improve customer experience and reduce operating costs."
+    },
+    "integration": {
+      "whatIs": "What is it?",
+      "intro": "System integration connects different applications and databases to work as a cohesive unit, eliminating the need for duplicate entries and improving efficiency.",
+      "howWeDoIt": "How we do it",
+      "howWeDoItList": [
+        "Analysis of existing systems to identify integration points.",
+        "Development of custom APIs or use of middleware like Zapier or MuleSoft.",
+        "Implementation of real-time synchronization between platforms.",
+        "Automation of workflows to reduce human errors.",
+        "Comprehensive testing to ensure data integrity."
+      ],
+      "benefits": "Benefits",
+      "benefitsText": "Optimize workflow, reduce errors and increase team productivity."
+    },
+    "customization": {
+      "whatIs": "What is it?",
+      "intro": "Sometimes, standard software does not cover all the specific needs of your company. Customization adapts existing solutions to perfectly fit your processes.",
+      "howWeDoIt": "How we do it",
+      "howWeDoItList": [
+        "Evaluation of current functionalities and specific needs.",
+        "Modification of source code or development of additional modules.",
+        "Integration with existing systems for a smooth transition.",
+        "Compatibility and performance testing.",
+        "Team training for the use of customized software."
+      ],
+      "benefits": "Benefits",
+      "benefitsText": "Increase efficiency, reduce long-term costs and improve user satisfaction."
+    },
+    "saas": {
+      "whatIs": "What is it?",
+      "intro": "Software as a Service (SAAS) is a software delivery model where applications are hosted in the cloud and accessed through the internet, offering scalability and accessibility.",
+      "howWeDoIt": "How we do it",
+      "howWeDoItList": [
+        "Scalable application architecture using technologies like React, Node.js and cloud databases.",
+        "Implementation of secure authentication and authorization.",
+        "Development of customizable dashboards for different types of users.",
+        "Integration with third-party APIs for additional functionalities.",
+        "Continuous monitoring and automatic updates."
+      ],
+      "benefits": "Benefits",
+      "benefitsText": "Reduce infrastructure costs, allow access from anywhere and facilitate scaling according to needs."
+    },
+    "consulting": {
+      "whatIs": "What is it?",
+      "intro": "Technology consulting provides expert advice to help companies optimize their technological processes, adopt new technologies and solve complex technical challenges.",
+      "howWeDoIt": "How we do it",
+      "howWeDoItList": [
+        "Initial assessment of current technological infrastructure and future needs.",
+        "Risk and opportunity analysis in adopting new technologies.",
+        "Development of customized strategies for digital transformation.",
+        "Recommendations on tools, platforms and best practices.",
+        "Guided implementation and support during transition."
+      ],
+      "benefits": "Benefits",
+      "benefitsText": "Improve decision making, reduce technological risks and accelerate innovation in your company."
+    },
+    "talent": {
+      "whatIs": "What is it?",
+      "intro": "IT talent contracting focuses on the identification, recruitment and placement of qualified professionals in information technology to meet the specific needs of your team.",
+      "howWeDoIt": "How we do it",
+      "howWeDoItList": [
+        "Analysis of vacant positions and specific requirements.",
+        "Active search for candidates on specialized platforms and professional networks.",
+        "Technical and cultural evaluation of pre-selected candidates.",
+        "Coordination of interviews and selection processes.",
+        "Integration of new talent into the team with initial training."
+      ],
+      "benefits": "Benefits",
+      "benefitsText": "Quick access to specialized talent, reduction of hiring times and improvement of IT team quality."
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Oops! Page not found",
+    "returnHome": "Return to Home"
+  },
+  "language": {
+    "switch": "Language",
+    "english": "English",
+    "spanish": "Spanish"
+  }
+}

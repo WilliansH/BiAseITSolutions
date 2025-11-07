@@ -1,18 +1,20 @@
 import React from 'react';
 import { ShoppingCart, Link2, Settings, Cloud, Lightbulb, Users } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-
-const services = [
-	{ id: 'ecommerce', title: 'Soluciones de E-Commerce', desc: 'Plataformas e‑commerce seguras, optimizadas y adaptadas a tu negocio.', icon: ShoppingCart },
-	{ id: 'integracion', title: 'Integración de Sistemas', desc: 'Conectamos tus aplicaciones para eliminar silos y automatizar flujos.', icon: Link2 },
-	{ id: 'personalizacion', title: 'Personalización de Software', desc: 'Adaptamos soluciones para encajar con tus procesos y usuarios.', icon: Settings },
-	{ id: 'saas', title: 'Desarrollo SAAS', desc: 'Arquitectura escalable y gestión en nube para productos SaaS.', icon: Cloud },
-	{ id: 'consultoria', title: 'Consultoría Tecnológica', desc: 'Estrategia, roadmap y acompañamiento en transformación digital.', icon: Lightbulb },
-	{ id: 'talento', title: 'Contrato de Talento IT', desc: 'Reclutamiento y colocación de perfiles IT especializados.', icon: Users },
-];
+import { useTranslation } from 'react-i18next';
 
 const Services: React.FC = () => {
 	const navigate = useNavigate();
+	const { t } = useTranslation();
+
+	const services = [
+		{ id: 'ecommerce', title: t('services.ecommerce.title'), desc: t('services.ecommerce.description'), icon: ShoppingCart },
+		{ id: 'integration', title: t('services.integration.title'), desc: t('services.integration.description'), icon: Link2 },
+		{ id: 'customization', title: t('services.customization.title'), desc: t('services.customization.description'), icon: Settings },
+		{ id: 'saas', title: t('services.saas.title'), desc: t('services.saas.description'), icon: Cloud },
+		{ id: 'consulting', title: t('services.consulting.title'), desc: t('services.consulting.description'), icon: Lightbulb },
+		{ id: 'talent', title: t('services.talent.title'), desc: t('services.talent.description'), icon: Users },
+	];
 
 	const handleClick = (id: string) => {
 		navigate(`/services#${id}`);
@@ -22,8 +24,8 @@ const Services: React.FC = () => {
 		<section id="services" className="py-20 sm:py-32">
 			<div className="container mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="text-center mb-12">
-					<h2 className="text-4xl sm:text-5xl font-bold mb-4">Nuestros Servicios</h2>
-					<p className="text-muted-foreground max-w-3xl mx-auto">Ofrecemos soluciones a medida para transformar digitalmente tu empresa.</p>
+					<h2 className="text-4xl sm:text-5xl font-bold mb-4">{t('services.title')}</h2>
+					<p className="text-muted-foreground max-w-3xl mx-auto">{t('services.description')}</p>
 				</div>
 
 				<div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

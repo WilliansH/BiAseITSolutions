@@ -1,7 +1,10 @@
 import { WebGLShader } from "@/components/ui/web-gl-shader";
 import { LiquidButton } from "@/components/ui/liquid-glass-button";
+import { useTranslation } from "react-i18next";
 
 const Hero = () => {
+  const { t } = useTranslation();
+
   const scrollToContact = () => {
     const element = document.getElementById("contact");
     if (element) {
@@ -18,25 +21,25 @@ const Hero = () => {
             BiAse IT Solutions
           </h1>
           <p className="text-muted-foreground px-6 text-center text-xs md:text-sm lg:text-lg">
-            Diseñando el futuro
+            {t('hero.subtitle')}
           </p>
           <div className="my-8 flex items-center justify-center gap-1">
             <span className="relative flex h-3 w-3 items-center justify-center">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
               <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
             </span>
-            <p className="text-xs text-green-500">¿Listos para empezar?</p>
+            <p className="text-xs text-green-500">{t('hero.status')}</p>
           </div>
-          
-          <div className="flex justify-center"> 
-            <LiquidButton 
+
+          <div className="flex justify-center">
+            <LiquidButton
               onClick={scrollToContact}
-              className="text-foreground border rounded-full" 
+              className="text-foreground border rounded-full"
               size="xl"
             >
-              Let&apos;s Go
-            </LiquidButton> 
-          </div> 
+              {t('hero.cta')}
+            </LiquidButton>
+          </div>
         </main>
       </div>
     </section>
