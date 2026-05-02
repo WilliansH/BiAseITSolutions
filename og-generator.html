@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Generador OG Image — BiAse IT Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --bg: #0e1525;
+      --bg-2: #1a2240;
+      --fg: #e6eef9;
+      --muted: #9bb0c9;
+      --primary: #1f8eef;
+      --secondary: #f49223;
+      --green: #22c55e;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, var(--bg) 0%, var(--bg-2) 100%);
+      color: var(--fg);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      padding: 32px 16px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+    h1 { margin: 0; font-size: 24px; font-weight: 700; text-align: center; }
+    .lead { margin: 0; opacity: 0.75; max-width: 720px; text-align: center; line-height: 1.5; }
+    .preview-wrap {
+      width: 100%;
+      max-width: 1100px;
+      aspect-ratio: 1200 / 630;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .preview-wrap svg { width: 100%; height: 100%; display: block; }
+
+    .controls {
+      width: 100%;
+      max-width: 1100px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px 20px;
+    }
+    .controls label { display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: var(--muted); }
+    .controls input {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--fg);
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 14px;
+      font-family: inherit;
+    }
+    .controls input:focus { outline: none; border-color: var(--primary); }
+
+    button.download {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      border: none;
+      padding: 16px 36px;
+      border-radius: 999px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 0 30px rgba(31, 142, 239, 0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+      font-family: inherit;
+    }
+    button.download:hover { transform: translateY(-1px); box-shadow: 0 0 40px rgba(31, 142, 239, 0.6); }
+
+    .steps {
+      width: 100%;
+      max-width: 720px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 20px 24px;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .steps strong { color: var(--fg); }
+    .steps code { background: rgba(255, 255, 255, 0.08); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+    .steps ol { padding-left: 22px; margin: 8px 0 0; }
+  </style>
+</head>
+<body>
+  <h1>Vista previa Open Graph — BiAse IT Solutions</h1>
+  <p class="lead">Así se va a ver tu sitio cuando alguien comparta el link en WhatsApp, X, LinkedIn, Discord, etc.</p>
+
+  <div class="preview-wrap">
+    <svg id="og-svg" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#0e1525" />
+          <stop offset="100%" stop-color="#1a2240" />
+        </linearGradient>
+        <radialGradient id="glow1" cx="0.15" cy="0.18" r="0.55">
+          <stop offset="0%" stop-color="#1f8eef" stop-opacity="0.45" />
+          <stop offset="100%" stop-color="#1f8eef" stop-opacity="0" />
+        </radialGradient>
+        <radialGradient id="glow2" cx="0.88" cy="0.85" r="0.55">
+          <stop offset="0%" stop-color="#f49223" stop-opacity="0.35" />
+          <stop offset="100%" stop-color="#f49223" stop-opacity="0" />
+        </radialGradient>
+        <linearGradient id="textGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#3fb6ff" />
+          <stop offset="100%" stop-color="#f49223" />
+        </linearGradient>
+        <pattern id="dots" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+          <circle cx="2" cy="2" r="1" fill="#ffffff" opacity="0.07" />
+        </pattern>
+      </defs>
+
+      <!-- Background layers -->
+      <rect width="1200" height="630" fill="url(#bg)" />
+      <rect width="1200" height="630" fill="url(#dots)" />
+      <rect width="1200" height="630" fill="url(#glow1)" />
+      <rect width="1200" height="630" fill="url(#glow2)" />
+
+      <!-- Decorative shader-like horizontal lines on the right (echo of the hero WebGL) -->
+      <g opacity="0.5">
+        <line x1="820" y1="120" x2="1120" y2="120" stroke="#3fb6ff" stroke-width="1" stroke-opacity="0.3" />
+        <line x1="860" y1="155" x2="1140" y2="155" stroke="#3fb6ff" stroke-width="1" stroke-opacity="0.5" />
+        <line x1="900" y1="190" x2="1110" y2="190" stroke="#3fb6ff" stroke-width="2" stroke-opacity="0.7" />
+        <line x1="860" y1="225" x2="1140" y2="225" stroke="#3fb6ff" stroke-width="1" stroke-opacity="0.5" />
+        <line x1="820" y1="260" x2="1120" y2="260" stroke="#3fb6ff" stroke-width="1" stroke-opacity="0.3" />
+      </g>
+
+      <!-- Status indicator (matches hero "Disponible para nuevos proyectos") -->
+      <g transform="translate(80, 175)">
+        <circle cx="6" cy="6" r="14" fill="#22c55e" opacity="0.25" />
+        <circle cx="6" cy="6" r="6" fill="#22c55e" />
+        <text id="og-status" x="32" y="13" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#22c55e" font-weight="500">Disponible para nuevos proyectos</text>
+      </g>
+
+      <!-- Main title -->
+      <text id="og-title" x="80" y="340" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="180" font-weight="900" fill="url(#textGrad)" letter-spacing="-6">BiAse</text>
+      <text id="og-sub" x="80" y="410" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="52" font-weight="600" fill="#e6eef9" letter-spacing="3">IT SOLUTIONS</text>
+
+      <!-- Tagline -->
+      <text id="og-tag" x="80" y="490" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="400" fill="#9bb0c9">Soluciones tecnológicas para impulsar tu negocio</text>
+
+      <!-- URL pill bottom-right -->
+      <g transform="translate(900, 558)">
+        <rect x="0" y="0" width="220" height="44" rx="22" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.12" />
+        <text id="og-url" x="110" y="29" font-family="system-ui, sans-serif" font-size="18" fill="#e6eef9" text-anchor="middle" font-weight="500">biaseitsolutions.vercel.app</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="controls">
+    <label>Título principal
+      <input id="i-title" type="text" value="BiAse" />
+    </label>
+    <label>Subtítulo
+      <input id="i-sub" type="text" value="IT SOLUTIONS" />
+    </label>
+    <label>Tagline
+      <input id="i-tag" type="text" value="Soluciones tecnológicas para impulsar tu negocio" />
+    </label>
+    <label>Estado
+      <input id="i-status" type="text" value="Disponible para nuevos proyectos" />
+    </label>
+    <label>URL pill
+      <input id="i-url" type="text" value="biaseitsolutions.vercel.app" />
+    </label>
+  </div>
+
+  <button class="download" id="download">Descargar PNG (1200 × 630)</button>
+
+  <div class="steps">
+    <strong>Pasos:</strong>
+    <ol>
+      <li>Si querés, editá los textos arriba (se actualiza la vista previa al instante).</li>
+      <li>Hacé clic en <strong>Descargar PNG</strong>.</li>
+      <li>Guardá el archivo como <code>og-image.png</code> dentro de la carpeta <code>public/</code> del proyecto.</li>
+      <li>Hacé deploy en Vercel — el <code>index.html</code> ya está configurado para usarla.</li>
+      <li>Cuando termines, podés borrar este archivo (<code>og-generator.html</code>) — solo es una herramienta one-shot.</li>
+    </ol>
+  </div>
+
+  <script>
+    // Live edit: bind inputs to SVG text
+    const bind = (inputId, svgId) => {
+      const input = document.getElementById(inputId);
+      const target = document.getElementById(svgId);
+      input.addEventListener('input', (e) => { target.textContent = e.target.value; });
+    };
+    bind('i-title', 'og-title');
+    bind('i-sub', 'og-sub');
+    bind('i-tag', 'og-tag');
+    bind('i-status', 'og-status');
+    bind('i-url', 'og-url');
+
+    // SVG -> PNG download (no dependencies)
+    document.getElementById('download').addEventListener('click', () => {
+      const svg = document.getElementById('og-svg');
+      const clone = svg.cloneNode(true);
+      // Ensure xmlns set on clone so the blob is valid standalone SVG
+      clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+      const svgString = new XMLSerializer().serializeToString(clone);
+      const svgBlob = new Blob([svgString], { type: 'image/svg+xml;charset=utf-8' });
+      const svgUrl = URL.createObjectURL(svgBlob);
+
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      img.onload = () => {
+        const canvas = document.createElement('canvas');
+        canvas.width = 1200;
+        canvas.height = 630;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, 1200, 630);
+        URL.revokeObjectURL(svgUrl);
+
+        canvas.toBlob((blob) => {
+          if (!blob) {
+            alert('No se pudo generar el PNG. Probá en Chrome o Edge.');
+            return;
+          }
+          const dlUrl = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = dlUrl;
+          a.download = 'og-image.png';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          setTimeout(() => URL.revokeObjectURL(dlUrl), 1000);
+        }, 'image/png');
+      };
+      img.onerror = (e) => {
+        console.error('Error generando PNG:', e);
+        alert('Error generando el PNG. Mirá la consola del navegador.');
+      };
+      img.src = svgUrl;
+    });
+  </script>
+</body>
+</html>

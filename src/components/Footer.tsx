@@ -1,4 +1,3 @@
-import { Github, Linkedin, Twitter } from "lucide-react";
 import logo from "@/assets/logo.jpg";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -77,36 +76,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Social Media */}
-          {/* <div>
-            <h3 className="font-semibold mb-4">{t('footer.followUs')}</h3>
-            <div className="flex gap-4">
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors"
-              >
-                <Twitter className="w-5 h-5 text-primary" />
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors"
-              >
-                <Linkedin className="w-5 h-5 text-primary" />
-              </a>
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors"
-              >
-                <Github className="w-5 h-5 text-primary" />
-              </a>
-            </div>
-          </div> */}
+          {/* Social Media: ocultas hasta tener cuentas activas */}
         </div>
 
         {/* Bottom Bar */}
