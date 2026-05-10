@@ -1,0 +1,27 @@
+# ============================================================
+# ENTORNO: STAGING / PRE-PRODUCCIÓN (build completo con nginx)
+# Comando: docker compose -f docker-compose.staging.yml up --build
+# Acceso:  http://localhost:3000
+#
+# Simula EXACTAMENTE lo que corre en Vercel.
+# Usa esto para verificar el build final antes de hacer deploy.
+# ============================================================
+
+services:
+  biase-staging:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        # Las claves se leen desde tu archivo .env.staging (nunca al repo)
+        VITE_EMAILJS_PUBLIC_KEY: ${VITE_EMAILJS_PUBLIC_KEY}
+        VITE_EMAILJS_SERVICE_ID: ${VITE_EMAILJS_SERVICE_ID}
+        VITE_EMAILJS_TEMPLATE_ID: ${VITE_EMAILJS_TEMPLATE_ID}
+    container_name: biase-staging
+    ports:
+      - "3000:80"
+    env_file:
+      # Copia .env.example -> .env.staging y completa tus claves reales
+      - path: .env.staging
+        required: false
+    restart: unless-stopped

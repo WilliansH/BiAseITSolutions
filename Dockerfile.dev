@@ -1,0 +1,20 @@
+# ============================================================
+# Dockerfile de DESARROLLO LOCAL (hot reload)
+# Usa Vite dev server — los cambios se reflejan al instante
+# ============================================================
+FROM node:20-alpine
+
+WORKDIR /app
+
+# Copia los archivos de dependencias
+COPY package*.json ./
+
+# Instala dependencias
+RUN npm install
+
+# El código fuente se monta como volumen (no se copia aquí)
+# Esto permite hot reload real sin reconstruir la imagen
+
+EXPOSE 8080
+
+CMD ["npm", "run", "dev"]
